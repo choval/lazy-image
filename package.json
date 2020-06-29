@@ -1,0 +1,18 @@
+{
+    "name": "choval/lazyimage",
+    "version": "0.1.0",
+    "description": "Lazy load & unload images",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/choval/lazyimage.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/choval/lazyimage/issues"
+    },
+    "homepage": "https://github.com/choval/lazyimage#readme"
+}
