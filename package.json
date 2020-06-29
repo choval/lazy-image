@@ -1,5 +1,5 @@
 {
-    "name": "choval/lazyimage",
+    "name": "lazyimage",
     "version": "0.1.0",
     "description": "Lazy load & unload images",
     "scripts": {
