@@ -61,7 +61,7 @@ Background Image.
     ></div>
 ```
 
-## Inview class
+### Inview class
 
 A class can be added/removed together with the 
 lazy loading/unloading using `data-lazy-class`.
@@ -72,6 +72,16 @@ lazy loading/unloading using `data-lazy-class`.
     data-lazy-src="/image.jpeg"
     data-lazy-class="visible"
     >
+```
+
+### Manually calling
+
+The library can be called to load/unload images manually,
+this is useful when elements are shown/hidden or loaded
+from other actions.
+
+```js
+LazyImage.run();
 ```
 
 ## License
