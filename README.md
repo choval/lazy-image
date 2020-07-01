@@ -5,15 +5,23 @@ Lazy load and unload images.
 With this, images are loaded when they are about to 
 be displayed and unloaded whne they are out of view.
 
-The load/unload threshold is by default 200px, it
-can be customized by using `data-lazy-threshold` or
+## Note
+
+This only works with vertical scrolling for now.
+Horizontal scrolling will be coming.
+
+## Usage
+
+The load/unload threshold is by default the `window.innerHeight`,
+it can be customized by using `data-lazy-threshold` or
 change the default:
 
 ```js
-LazyImage.threshold = 200;
+LazyImage.threshold = 200;  // Fixed pixels
+LazyImage.threshold = '20%';    // Percentage of window height
 ```
 
-## Usage
+### Demos
 
 Simple image `src`.
 
@@ -78,10 +86,46 @@ lazy loading/unloading using `data-lazy-class`.
 
 The library can be called to load/unload images manually,
 this is useful when elements are shown/hidden or loaded
-from other actions.
+from other actions changing the document height.
 
 ```js
 LazyImage.run();
+```
+
+To stop scroll event tracking:
+
+```js
+LazyImage.unhook();
+```
+
+Rehook
+
+```js
+LazyImage.hook();
+```
+
+### Events
+
+When loaded/unloaded, the following events are triggered.
+
+* `lazy-loaded`
+* `lazy-unloaded`
+
+```js
+<img alt=""
+    src="/placeholder.png"
+    data-lazy-src="/image.jpeg"
+    id="lazyimage"
+    >
+
+<script>
+$('#lazyimage').on('lazy-loaded', function(e) {
+    console.log(this);
+});
+$('#lazyimage').on('lazy-unloaded', function(e) {
+    console.log(this);
+});
+</script>
 ```
 
 ## License
