@@ -9,8 +9,8 @@
         "type": "git",
         "url": "git+https://github.com/choval/lazyimage.git"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Osvaldo Jiang",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/choval/lazyimage/issues"
     },
