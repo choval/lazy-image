@@ -9,6 +9,7 @@ var LazyImage = {
     viewport_top: 0,
     viewport_bottom: 0,
     debug: false,
+    unloads: false,
     // Hook
     hook: function () {
         if (typeof $ != 'undefined') {
@@ -60,6 +61,7 @@ var LazyImage = {
         data.lazySizes = $obj.data('lazy-sizes') || false;
         data.lazyBackgroundImage = $obj.data('lazy-background-image') || false;
         data.lazyClass = $obj.data('lazy-class') || false;
+        data.lazyUnload = $obj.data('lazy-unload') || LazyImage.unloads;
         return data;
     },
     loadImage: async function ($obj) {
@@ -95,6 +97,9 @@ var LazyImage = {
     },
     unloadImage: function ($obj) {
         const data = LazyImage.getLazyData($obj);
+        if (!data.lazyUnload) {
+            return false;
+        }
         $obj.data('lazy-loaded', false);
         if (data.lazySrc) {
             $obj.attr('src', $obj.data('lazy-src-original')||'');
